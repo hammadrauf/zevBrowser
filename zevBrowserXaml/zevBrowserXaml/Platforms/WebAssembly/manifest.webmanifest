@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "zevBrowserXaml",
+  "display": "standalone",
+  "name": "zevBrowserXaml",
+  "short_name": "zevBrowserXaml",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
