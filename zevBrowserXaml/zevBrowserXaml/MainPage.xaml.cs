@@ -12,8 +12,29 @@ public sealed partial class MainPage : Page
     private async void onClick_btnFolder(object sender, RoutedEventArgs e)
     {
         // Add your logic here
-        var dialog = new MessageDialog("Zone-Minder Folder button clicked!");
-        await dialog.ShowAsync();
+        var dialog = new ContentDialog
+        {
+            Content = "This is a Dialog.",
+            Title = "My Dialog",
+            PrimaryButtonText = "Yes",
+            SecondaryButtonText = "No",
+            CloseButtonText = "Cancel",
+            XamlRoot = this.XamlRoot
+        };
+
+        var result = await dialog.ShowAsync();
+        if (result == ContentDialogResult.Primary)
+        {
+
+        }
+        else if (result == ContentDialogResult.Secondary)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 
 }
