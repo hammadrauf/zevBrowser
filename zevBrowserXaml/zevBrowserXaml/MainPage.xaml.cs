@@ -37,4 +37,8 @@ public sealed partial class MainPage : Page
         }
     }
 
+    private async void btnSettings_Click(object sender, RoutedEventArgs e)
+    {
+        Frame.Navigate(typeof(SettingsPage));
+    }
 }

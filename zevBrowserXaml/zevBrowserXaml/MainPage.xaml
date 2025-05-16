@@ -49,7 +49,7 @@
 
             <!-- Button: Settings -->
             <Button x:Name="btnSettings" Content="Settings" Grid.Row="4" Grid.Column="0" 
-              HorizontalAlignment="Left" Margin="5" />
+              Click="btnSettings_Click" HorizontalAlignment="Left" Margin="5" />
 
             <!-- NumericUpDown: Start -->
             <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Margin="5">
