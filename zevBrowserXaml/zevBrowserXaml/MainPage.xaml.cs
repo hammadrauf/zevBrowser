@@ -1,3 +1,4 @@
+using Windows.Storage.Pickers;
 using Windows.UI.Popups;
 
 
@@ -12,30 +13,22 @@ public sealed partial class MainPage : Page
 
     private async void onClick_btnFolder(object sender, RoutedEventArgs e)
     {
-        // Add your logic here
-        var dialog = new ContentDialog
-        {
-            Content = "This is a Dialog.",
-            Title = "My Dialog",
-            PrimaryButtonText = "Yes",
-            SecondaryButtonText = "No",
-            CloseButtonText = "Cancel",
-            XamlRoot = this.XamlRoot
-        };
+        var folderPicker = new FolderPicker();
+        folderPicker.FileTypeFilter.Add("*");
 
-        var result = await dialog.ShowAsync();
-        if (result == ContentDialogResult.Primary)
+        var storageFolder = await folderPicker.PickSingleFolderAsync();
+        if (storageFolder != null)
         {
+            var fileList = await storageFolder.GetFilesAsync();
+            var folderList = await storageFolder.GetFoldersAsync();
 
-        }
-        else if (result == ContentDialogResult.Secondary)
-        {
-
+            // Do something with the contents...
         }
         else
         {
-
+            // Did not pick any folder.
         }
+
     }
 
     private async void btnSettings_Click(object sender, RoutedEventArgs e)
