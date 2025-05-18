@@ -1,8 +1,8 @@
 ﻿<Page x:Class="zevBrowserXaml.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:local="using:zevBrowserXaml"
       xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+      xmlns:local="using:zevBrowserXaml"
       xmlns:gs="using:GridScroller.Package"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <ScrollViewer>
@@ -43,8 +43,7 @@
             <ComboBox x:Name="cmbCamera" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
                 Margin="5" />
 
-
-            <gs:cmpGridScroller Width="180" Height="100"
+            <gs:cmpGridScroller x:Name="gsDates" Width="180" Height="100"
                                 BorderBrush="Black"
                                 BorderThickness="1"
                                 Margin="10" Grid.Row="2" Grid.RowSpan="3"
@@ -52,10 +51,6 @@
                 <gs:cmpGridScroller.Items>
                     <CheckBox Content="Date Folder 1" Margin="5" />
                     <CheckBox Content="Date Folder 2" Margin="5" />
-                    <CheckBox Content="Date Folder 3" Margin="5" />
-                    <CheckBox Content="Date Folder 4" Margin="5" />
-                    <CheckBox Content="Date Folder 5" Margin="5" />
-                    <CheckBox Content="Date Folder 6" Margin="5" />
                 </gs:cmpGridScroller.Items>
             </gs:cmpGridScroller>
 
