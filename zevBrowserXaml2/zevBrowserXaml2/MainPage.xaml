@@ -44,8 +44,9 @@
                 Margin="5" />
 
             <gs:cmpGridScroller x:Name="gsDates" Width="180" Height="100"
-                                BorderBrush="Black"
-                                BorderThickness="1"
+                                BorderBrush="BurlyWood"
+                                Background="White"
+                                BorderThickness="3"
                                 Margin="10" Grid.Row="2" Grid.RowSpan="3"
                                 Grid.Column="1" Grid.ColumnSpan="2">
                 <gs:cmpGridScroller.Items>

@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
 
@@ -25,6 +25,13 @@
       MVUX;
       SkiaRenderer;
     </UnoFeatures>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
+    <MtouchUseLlvm>True</MtouchUseLlvm>
+    <EnableSGenConc>True</EnableSGenConc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
+    <EnableSGenConc>True</EnableSGenConc>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="GridScroller.Package" />
