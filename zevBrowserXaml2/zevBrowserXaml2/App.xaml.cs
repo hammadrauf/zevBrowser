@@ -12,10 +12,12 @@ public partial class App : Application
     /// </summary>
     public App()
     {
+        // Initialize global logging
+        InitializeLogging();
         this.InitializeComponent();
     }
 
-    protected Window? MainWindow { get; private set; }
+    public Window? MainWindow { get; private set; }
 
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
@@ -88,7 +90,7 @@ public partial class App : Application
 #endif
 
             // Exclude logs below this level
-            builder.SetMinimumLevel(LogLevel.Information);
+            builder.SetMinimumLevel(LogLevel.Debug);
 
             // Default filters for Uno Platform namespaces
             builder.AddFilter("Uno", LogLevel.Warning);

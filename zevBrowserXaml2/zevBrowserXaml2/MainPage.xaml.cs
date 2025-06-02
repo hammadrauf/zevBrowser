@@ -2,7 +2,10 @@ using Windows.Storage.Pickers;
 using Windows.UI.Popups;
 using GridScroller.Package;
 using System.Collections.ObjectModel;
-
+using Microsoft.Extensions.Logging;
+using Uno.Extensions;
+using Uno.UI.Extensions;
+using Uno.UI.Xaml;
 
 namespace zevBrowserXaml2;
 
@@ -23,12 +26,17 @@ public sealed partial class MainPage : Page
 
     private async void onClick_btnFolder(object sender, RoutedEventArgs e)
     {
+        this.Log().LogDebug("==> Inside onClick_btnFolder.....");
         var folderPicker = new FolderPicker();
         folderPicker.FileTypeFilter.Add("*");
 
-        Task.Delay(10).Wait();
+        // Set the window handle for the picker
+        //var window = (Application.Current as App)?.MainWindow;
+        //var hwnd = WinRT.Interop.WindowNative.GetWindowHandle( window );
+        //WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
+
+        this.Log().LogDebug($"folderPicker = {folderPicker.FileTypeFilter}");
         var storageFolder = await folderPicker.PickSingleFolderAsync();
-        Task.Delay(10).Wait();
         if (storageFolder != null)
         {
             //Task.Delay(10).Wait();
